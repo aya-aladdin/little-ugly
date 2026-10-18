@@ -437,3 +437,201 @@ h1 {
         padding: 4px;
     }
 }
+
+
+/* Year in Pixels calendar */
+
+.pixel-calendar-wrap {
+    overflow-x: auto;
+    padding-bottom: 8px;
+}
+
+.pixel-calendar {
+    display: grid;
+    grid-template-columns: repeat(12, minmax(25px, 1fr)) 28px;
+    gap: 4px;
+    min-width: 440px;
+}
+
+.calendar-month {
+    text-align: center;
+    font-size: 10px;
+    color: var(--muted);
+    padding: 5px 0 8px;
+}
+
+.calendar-day {
+    aspect-ratio: 1;
+    min-width: 0;
+    padding: 0;
+    border: none;
+    border-radius: 3px;
+    background: #e3d9ce;
+}
+
+.calendar-day:disabled {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.calendar-day:hover {
+    outline: 2px solid var(--accent);
+}
+
+.calendar-day-number {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--muted);
+    font-size: 10px;
+}
+
+.day-editor {
+    position: fixed;
+    inset: 0;
+    z-index: 60;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 14px;
+    background: rgba(56, 42, 30, 0.35);
+    backdrop-filter: blur(7px);
+}
+
+.day-editor.open {
+    display: flex;
+}
+
+.day-panel {
+    width: min(490px, 100%);
+    max-height: 90vh;
+    overflow-y: auto;
+    padding: 22px;
+    border: 1px solid white;
+    border-radius: 20px;
+    background: #f5eee6;
+    box-shadow: 0 20px 80px #49352530;
+}
+
+.day-panel-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.day-panel-header small {
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 10px;
+}
+
+.day-panel-header h2 {
+    margin: 7px 0 18px;
+}
+
+.day-panel h3 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-size: 12px;
+}
+
+.day-colours {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.day-colour {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    padding: 8px 10px;
+    border-radius: 10px;
+    font-size: 11px;
+}
+
+.day-colour.selected {
+    outline: 2px solid var(--text);
+}
+
+.day-colour-swatch {
+    width: 17px;
+    height: 17px;
+    border-radius: 5px;
+    flex-shrink: 0;
+}
+
+.new-colour input:not([type="color"]),
+#day-note {
+    width: 100%;
+    padding: 11px;
+    border: 1px solid #ddcfc1;
+    border-radius: 10px;
+    background: rgba(255,255,255,.45);
+    outline-color: var(--accent);
+}
+
+.colour-creator {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 8px;
+}
+
+.colour-creator input[type="color"] {
+    width: 42px;
+    height: 38px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+}
+
+#day-note {
+    min-height: 110px;
+    resize: vertical;
+    line-height: 1.6;
+}
+
+.day-photo-upload {
+    display: block;
+    margin-top: 12px;
+    padding: 12px;
+    text-align: center;
+    border: 1px dashed #cbb9a7;
+    border-radius: 10px;
+    cursor: pointer;
+    color: var(--muted);
+    font-size: 12px;
+}
+
+.day-photo-upload input {
+    display: none;
+}
+
+#day-photo-gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    margin-top: 10px;
+}
+
+#day-photo-gallery img {
+    width: 100%;
+    aspect-ratio: 1;
+    object-fit: cover;
+    border-radius: 9px;
+}
+
+.save-day {
+    width: 100%;
+    margin-top: 18px;
+    background: #665242;
+    color: white;
+}
+
+@media (max-width: 520px) {
+    .day-panel {
+        padding: 17px;
+    }
+}

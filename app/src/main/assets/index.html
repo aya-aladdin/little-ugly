@@ -54,6 +54,43 @@
 
     <div id="toast"></div>
 
+
+<div id="day-editor" class="day-editor">
+    <div class="day-panel">
+        <div class="day-panel-header">
+            <div>
+                <small id="day-date"></small>
+                <h2 id="day-heading">Your day</h2>
+            </div>
+            <button id="close-day">✕</button>
+        </div>
+
+        <h3>How was this day?</h3>
+        <div id="day-colours" class="day-colours"></div>
+
+        <div class="new-colour">
+            <h3>Create your own colour</h3>
+            <input id="new-colour-name" placeholder="Colour name">
+            <div class="colour-creator">
+                <input id="new-colour-value" type="color" value="#bba28d">
+                <button id="add-colour">＋ Add colour</button>
+            </div>
+        </div>
+
+        <h3>Little memories</h3>
+        <textarea id="day-note" placeholder="What happened today?"></textarea>
+
+        <label class="day-photo-upload">
+            ＋ Add photos
+            <input id="day-photos" type="file" accept="image/*" multiple>
+        </label>
+        <div id="day-photo-gallery"></div>
+
+        <button id="save-day" class="save-day">Save day</button>
+    </div>
+</div>
+
+
     <script src="app.js"></script>
 </body>
 </html>
