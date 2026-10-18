@@ -1,0 +1,59 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>little ugly</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="topbar">
+        <div>
+            <strong>◌ little ugly</strong>
+            <small>your space, your rules</small>
+        </div>
+        <button id="add-widget">＋ Add widget</button>
+    </header>
+
+    <main id="canvas">
+        <div class="date" id="today"></div>
+        <h1 contenteditable="true">a little space for everything.</h1>
+        <p class="subtitle" contenteditable="true">
+            no system. no rules. just your stuff.
+        </p>
+
+        <div id="widgets"></div>
+
+        <button id="add-bottom" class="add-bottom">
+            ＋ add something to your page
+        </button>
+    </main>
+
+    <div id="sidebar" class="sidebar">
+        <div class="panel">
+            <div class="panel-heading">
+                <h2>Widget library</h2>
+                <button id="close-sidebar">✕</button>
+            </div>
+            <p>Pick a widget to add it to your page.</p>
+            <div id="widget-menu"></div>
+        </div>
+    </div>
+
+    <div id="context-menu" class="context-menu">
+        <button data-add="heading">T　Heading</button>
+        <button data-add="text">≡　Body text</button>
+        <button data-add="note">▤　Note</button>
+        <button data-add="checklist">☑　Checkboxes</button>
+        <button data-add="pixels">▦　Year in Pixels</button>
+        <button data-add="photo">▧　Photo block</button>
+        <button data-add="clock">◷　Clock</button>
+        <button id="browse-widgets">＋　Browse widgets</button>
+    </div>
+
+    <div id="toast"></div>
+
+    <script src="app.js"></script>
+</body>
+</html>
